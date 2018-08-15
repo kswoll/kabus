@@ -9,6 +9,8 @@ namespace Kabus.Api.Database
 	public class KabusDb : DbContext
 	{
 		public DbSet<DbTopic> Topics { get; set; }
+		public DbSet<DbTopicTag> TopicTags { get; set; }
+		public DbSet<DbTag> Tags { get; set; }
 
 		public KabusDb(DbContextOptions options) : base(options)
 		{
@@ -22,7 +24,15 @@ namespace Kabus.Api.Database
 		{
 			base.OnConfiguring(optionsBuilder);
 
-			optionsBuilder.UseSqlite("Data Source=kabus.db");
+			optionsBuilder.UseSqlServer("Data Source=MAINGEAR;Initial Catalog=Kabus;Persist Security Info=True;User ID=kabus;Password=kabus");
 		}
+
+	    protected override void OnModelCreating(ModelBuilder modelBuilder)
+	    {
+	        base.OnModelCreating(modelBuilder);
+
+	        modelBuilder.Entity<DbTopicTag>().HasOne(x => x.Topic).WithMany(x => x.TopicTags).HasForeignKey(x => x.TopicUid);
+	        modelBuilder.Entity<DbTopicTag>().HasOne(x => x.Tag).WithMany(x => x.TopicTags).HasForeignKey(x => x.TagUid);
+	    }
 	}
 }
