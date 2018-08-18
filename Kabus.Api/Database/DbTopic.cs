@@ -2,6 +2,7 @@
 //     Copyright (c) 2018 PlanGrid, Inc. All rights reserved.
 // </copyright>
 
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
@@ -10,7 +11,7 @@ namespace Kabus.Api.Database
 	public class DbTopic
 	{
 		[Key]
-		public string Uid { get; set; }
+		public Guid    Uid { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
 
