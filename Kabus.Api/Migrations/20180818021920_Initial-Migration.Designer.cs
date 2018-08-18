@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Kabus.Api.Migrations
 {
     [DbContext(typeof(KabusDb))]
-    [Migration("20180818015018_Initial-Migration")]
+    [Migration("20180818021920_Initial-Migration")]
     partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -121,7 +121,7 @@ namespace Kabus.Api.Migrations
                     b.HasOne("Kabus.Api.Database.DbUser", "User")
                         .WithMany("TeamUsers")
                         .HasForeignKey("UserUid")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Restrict);
                 });
 
             modelBuilder.Entity("Kabus.Api.Database.DbTopicTag", b =>

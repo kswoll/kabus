@@ -67,7 +67,7 @@ namespace Kabus.Api.Migrations
                         column: x => x.UserUid,
                         principalTable: "Entities",
                         principalColumn: "Uid",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(

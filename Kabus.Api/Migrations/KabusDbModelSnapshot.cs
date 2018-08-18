@@ -119,7 +119,7 @@ namespace Kabus.Api.Migrations
                     b.HasOne("Kabus.Api.Database.DbUser", "User")
                         .WithMany("TeamUsers")
                         .HasForeignKey("UserUid")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Restrict);
                 });
 
             modelBuilder.Entity("Kabus.Api.Database.DbTopicTag", b =>

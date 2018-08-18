@@ -41,7 +41,7 @@ namespace Kabus.Api.Database
 
 	        modelBuilder.Entity<DbTeamUser>().HasKey(x => new { x.TeamUid, x.UserUid });
 	        modelBuilder.Entity<DbTeamUser>().HasOne(x => x.Team).WithMany(x => x.TeamUsers).HasForeignKey(x => x.TeamUid);
-	        modelBuilder.Entity<DbTeamUser>().HasOne(x => x.User).WithMany(x => x.TeamUsers).HasForeignKey(x => x.UserUid);
+	        modelBuilder.Entity<DbTeamUser>().HasOne(x => x.User).WithMany(x => x.TeamUsers).HasForeignKey(x => x.UserUid).OnDelete(DeleteBehavior.Restrict);
 	    }
 	}
 }
