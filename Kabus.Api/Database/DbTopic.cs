@@ -11,7 +11,7 @@ namespace Kabus.Api.Database
 	public class DbTopic
 	{
 		[Key]
-		public Guid    Uid { get; set; }
+		public Guid Uid { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
 

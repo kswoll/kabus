@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kabus.Api", "Kabus.Api\Kabu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kabus.Uwp", "Kabus.Uwp\Kabus.Uwp.csproj", "{037D4504-5B99-44DA-8C37-AD17719E82EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kabus.Api.Tests", "Kabus.Api.Tests\Kabus.Api.Tests.csproj", "{A0B74E74-F397-47BB-834B-7F75F1B29691}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kabus.Api.Tests", "Kabus.Api.Tests\Kabus.Api.Tests.csproj", "{A0B74E74-F397-47BB-834B-7F75F1B29691}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

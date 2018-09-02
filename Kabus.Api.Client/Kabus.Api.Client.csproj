@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="SexyHttp" Version="1.0.84" />
+    <PackageReference Include="SexyProxy" Version="2.0.82" />
+  </ItemGroup>
+
+</Project>
