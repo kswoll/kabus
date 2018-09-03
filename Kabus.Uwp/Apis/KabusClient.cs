@@ -1,8 +1,4 @@
-﻿// <copyright file="KabusClient.cs" company="PlanGrid, Inc.">
-//     Copyright (c) 2018 PlanGrid, Inc. All rights reserved.
-// </copyright>
-
-using SexyHttp;
+﻿using SexyHttp;
 
 namespace Kabus.Uwp.Apis
 {
@@ -10,7 +6,7 @@ namespace Kabus.Uwp.Apis
     {
         public static IKabusApi Create()
         {
-            return HttpApiClient<IKabusApi>.Create("");
+            return HttpApiClient<IKabusApi>.Create("http://localhost:55594/api");
         }
     }
 }
