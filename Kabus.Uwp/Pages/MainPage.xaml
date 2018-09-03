@@ -8,9 +8,8 @@
     xmlns:viewModels="using:Kabus.Uwp.ViewModels"
     xmlns:controls="using:Microsoft.UI.Xaml.Controls"
     xmlns:pages="using:Kabus.Uwp.Pages"
-    xmlns:uwp="using:Movel.Uwp"
+    xmlns:toolkit="using:Microsoft.Toolkit.Uwp.UI.Controls"
     mc:Ignorable="d"
-    d:DataContext="{d:DesignInstance viewModels:MainViewModel}"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Page.Resources>
@@ -32,21 +31,32 @@
             </TreeViewItem>
         </DataTemplate>
     </Page.Resources>
-    <SplitView IsPaneOpen="True" OpenPaneLength="250">
-        <SplitView.Pane>
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="48" />
-                    <RowDefinition Height="*" />
-                </Grid.RowDefinitions>
-                <Button Grid.Row="0" Style="{StaticResource NavigationBackButtonNormalStyle}" />
-                <controls:TreeView Grid.Row="1" ItemsSource="{x:Bind ViewModel.Sections}" />
-            </Grid>
-        </SplitView.Pane>
-        <SplitView.Content>
-            <TextBlock Text="HEllo" />
-        </SplitView.Content>
-    </SplitView>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="48" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Button Grid.Row="0" Style="{StaticResource NavigationBackButtonNormalStyle}" />
+            <controls:TreeView Grid.Row="1" ItemsSource="{x:Bind ViewModel.Sections}">
+                <controls:TreeView.ItemTemplate>
+                    <DataTemplate x:DataType="viewModels:SectionViewModel">
+                        <StackPanel Orientation="Horizontal">
+                            <SymbolIcon Symbol="GlobalNavigationButton" />
+                            <TextBlock Text="{x:Bind Name}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </controls:TreeView.ItemTemplate>
+            </controls:TreeView>
+        </Grid>
+        <toolkit:GridSplitter Grid.Column="1" Width="5" ResizeBehavior="PreviousAndNext" ResizeDirection="Columns" VerticalAlignment="Stretch" />
+        <TextBlock Grid.Column="2" Text="HEllo" />
+    </Grid>
 </pages:MainPageBase>
 
 
