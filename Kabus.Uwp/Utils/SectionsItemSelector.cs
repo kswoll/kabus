@@ -11,9 +11,9 @@ namespace Kabus.Uwp.Utils
 
         protected override DataTemplate SelectTemplateCore(object item)
         {
-            if (item is SectionViewModel)
-                return SectionTemplate;
-            else
+//            if (item is SectionViewModel)
+//                return SectionTemplate;
+//            else
                 return FolderTemplate;
         }
     }
